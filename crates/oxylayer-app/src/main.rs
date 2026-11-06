@@ -1060,6 +1060,23 @@ impl eframe::App for OxyLayerApp {
 }
 
 fn main() -> eframe::Result<()> {
+    // Graceful graphics driver fallback for WSL2 / virtualized Linux environments
+    #[cfg(target_os = "linux")]
+    {
+        let is_wsl = std::fs::read_to_string("/proc/version")
+            .map(|v| v.to_lowercase().contains("microsoft"))
+            .unwrap_or(false);
+
+        if is_wsl {
+            if std::env::var("LIBGL_ALWAYS_SOFTWARE").is_err() {
+                std::env::set_var("LIBGL_ALWAYS_SOFTWARE", "1");
+            }
+            if std::env::var("GALLIUM_DRIVER").is_err() {
+                std::env::set_var("GALLIUM_DRIVER", "llvmpipe");
+            }
+        }
+    }
+
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size([1280.0, 840.0])
