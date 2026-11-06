@@ -1,0 +1,13 @@
+[package]
+name = "oxylayer-filter"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+oxylayer-core = { path = "../oxylayer-core" }
+rayon.workspace = true
+serde.workspace = true
+glam.workspace = true
+thiserror.workspace = true

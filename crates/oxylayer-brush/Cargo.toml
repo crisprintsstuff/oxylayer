@@ -1,0 +1,11 @@
+[package]
+name = "oxylayer-brush"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+oxylayer-core = { path = "../oxylayer-core" }
+glam.workspace = true
+serde.workspace = true

@@ -1,0 +1,16 @@
+[package]
+name = "oxylayer-app"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+oxylayer-core = { path = "../oxylayer-core" }
+oxylayer-filter = { path = "../oxylayer-filter" }
+oxylayer-brush = { path = "../oxylayer-brush" }
+oxylayer-vector = { path = "../oxylayer-vector" }
+oxylayer-io = { path = "../oxylayer-io" }
+eframe.workspace = true
+glam.workspace = true
+image.workspace = true

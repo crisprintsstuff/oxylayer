@@ -1,0 +1,12 @@
+[package]
+name = "oxylayer-vector"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+oxylayer-core = { path = "../oxylayer-core" }
+kurbo.workspace = true
+glam.workspace = true
+serde.workspace = true
